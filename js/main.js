@@ -40,7 +40,7 @@ export default class Game {
       "land": "img/land.png",
       "medals_0": "img/medals_0.png",
       "medals_1": "img/medals_1.png",
-      "medals_2": "img/font_050.png",
+      "medals_2": "img/medals_2.png",
       "medals_3": "img/medals_3.png",
       "new": "img/new.png",
       "number_context_00": "img/number_context_00.png",

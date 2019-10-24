@@ -11,16 +11,16 @@ export default class Music {
     instance = this
 
     this.bgmAudio = new Audio()
-    this.bgmAudio.src = 'audio/sfx_wing.WAV'
+    this.bgmAudio.src = 'audio/sfx_wing.mp3'
 
     this.shootAudio     = new Audio()
-    this.shootAudio.src = 'audio/sfx_point.WAV'
+    this.shootAudio.src = 'audio/sfx_point.mp3'
 
     this.boomAudio     = new Audio()
-    this.boomAudio.src = 'audio/sfx_hit.WAV'
+    this.boomAudio.src = 'audio/sfx_hit.mp3'
 
     this.buttonAudio = new Audio()
-    this.buttonAudio.src = 'audio/sfx_swooshing.WAV'
+    this.buttonAudio.src = 'audio/sfx_swooshing.mp3'
   }
 
   playBgm() {
