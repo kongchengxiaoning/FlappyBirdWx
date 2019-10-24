@@ -11,16 +11,16 @@ export default class Music {
     instance = this
 
     this.bgmAudio = new Audio()
-    this.bgmAudio.loop = true
-    this.bgmAudio.src  = 'audio/bgm.mp3'
+    this.bgmAudio.src = 'audio/sfx_wing.WAV'
 
     this.shootAudio     = new Audio()
-    this.shootAudio.src = 'audio/bullet.mp3'
+    this.shootAudio.src = 'audio/sfx_point.WAV'
 
     this.boomAudio     = new Audio()
-    this.boomAudio.src = 'audio/boom.mp3'
+    this.boomAudio.src = 'audio/sfx_hit.WAV'
 
-    this.playBgm()
+    this.buttonAudio = new Audio()
+    this.buttonAudio.src = 'audio/sfx_swooshing.WAV'
   }
 
   playBgm() {
@@ -35,5 +35,9 @@ export default class Music {
   playExplosion() {
     this.boomAudio.currentTime = 0
     this.boomAudio.play()
+  }
+  playbutton(){
+    this.buttonAudio.currentTime = 0
+    this.buttonAudio.play()
   }
 }

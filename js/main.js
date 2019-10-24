@@ -82,8 +82,7 @@ export default class Game {
       wx.setStorageSync("score", "[]")
     }
     this.progress()
-    // this.music = new Music()
-    // this.music.playBgm()
+    this.music = new Music()
   }
   progress() { //加载资源
     let count = 0 // 统计加载完成的图片
@@ -200,6 +199,7 @@ class Pipe {
     // 分数判断
     if (game.bird.x1 > this.x2 && this.done) {
       game.score++
+      game.music.playShoot()
       this.done = false
     }
 
@@ -292,6 +292,7 @@ class SceneManager {
       case 3:
         game.scene = 3
         this.bz = false // 是否爆炸
+        game.music.playExplosion()
         break
       case 4:
         game.scene = 4
@@ -299,7 +300,6 @@ class SceneManager {
         this.score_panelY = canvas.height
         // 获取存储的成绩
         let arr = JSON.parse(wx.getStorageSync("score"))
-        console.log(arr)
         // 排序获取前三名
         arr.sort((a, b) => b - a)
         // 现在的成绩是game.score
@@ -420,20 +420,24 @@ class SceneManager {
       switch (game.scene) {
         case 0:
           if (e.touches[0].clientY > this.buttonY && e.touches[0].clientY < this.buttonY + 70 && e.touches[0].clientX > canvas.width / 2 - 58 && e.touches[0].clientX < canvas.width / 2 + 58) {
+            game.music.playbutton()
             this.enter(1)
           }
           break
         case 1:
+          game.music.playbutton()
           this.enter(2)
           break
         case 2:
           game.bird.clickTop()
+          game.music.playBgm()
           break
         case 3:
 
           break
         case 4:
           if (e.touches[0].clientY > 418 && e.touches[0].clientY < 448 && e.touches[0].clientX > canvas.width / 2 - 40 && e.touches[0].clientX < canvas.width / 2 + 40) {
+            game.music.playbutton()
             this.enter(2)
           }
           break
